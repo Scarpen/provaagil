@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @equipe.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @equipe.descricao %>
+</p>
+<p>
+  <strong>Integrantes nessa equipe:</strong>
+  <table class='table table-striped table-hover'>
+  		<tr>
+  			<th>Integrante</th>
+  			<th>Papel<th>
+
+  		</tr>
+	  <% @equipe.profissional.each do |integrante|%>
+	  <tr>
+	  	<td> <%= integrante.nome %> </td>
+	  		<td>
+	  		<% if integrante.papel %>
+  			 <%= integrante.papel.nome %> 
+  			<% end %>
+  			</td>
+	</tr>
+	  <% end %>
+  </table>
+
+
+</p>
+
+
+<%= link_to 'Editar', edit_equipes_path(@equipe) %> |
+<%= link_to 'Voltar', equipes_path %>

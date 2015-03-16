@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @profissional.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @profissional.email %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @profissional.cpf %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @profissional.endereco %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @profissional.telefone %>
+</p>
+<% if @profissional.papel %>
+<p>
+  <strong>Papel:</strong>
+  <%= @profissional.papel.nome%>
+</p>
+<% end %>
+<% if @profissional.equipe %>
+<p>
+  <strong>Equipe:</strong>
+  <%= @profissional.equipe.nome %>
+</p>
+<% end %>
+<%= link_to 'Editar', edit_profissionals_path(@profissional) %> |
+<%= link_to 'Voltar', profissionals_path %>

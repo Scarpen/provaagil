@@ -1,0 +1,27 @@
+<h1>Listando Papeis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descricao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @papels.each do |papel| %>
+      <tr>
+        <td><%= papel.nome %></td>
+        <td><%= papel.descricao %></td>
+        <td><%= link_to 'Mostrar', papel %></td>
+        <td><%= link_to 'Editar', edit_papels_path(papel) %></td>
+        <td><%= link_to 'Apagar', papel, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Papel', new_papels_path %>

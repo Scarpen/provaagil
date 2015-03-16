@@ -1,0 +1,37 @@
+<h1>Listando Integrantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Cpf</th>
+      <th>Endereco</th>
+      <th>Telefone</th>
+      <th>Papel</th>
+      <th>Equipe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profissionals.each do |profissional| %>
+      <tr>
+        <td><%= profissional.nome %></td>
+        <td><%= profissional.email %></td>
+        <td><%= profissional.cpf %></td>
+        <td><%= profissional.endereco %></td>
+        <td><%= profissional.telefone %></td>
+        <td><%= profissional.papel_id %></td>
+        <td><%= profissional.equipe_id %></td>
+        <td><%= link_to 'Mostrar', profissional %></td>
+        <td><%= link_to 'Editar', edit_profissionals_path(profissional) %></td>
+        <td><%= link_to 'Apagar', profissional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Integrante', new_profissionals_path %>
