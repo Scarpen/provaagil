@@ -1,6 +1,6 @@
 <h1>Listando Papeis</h1>
 
-<table>
+<table class='table table-striped table-hover'>
   <thead>
     <tr>
       <th>Nome</th>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'Novo Papel', new_papels_path %>
+<%= button_to 'Novo Papel', new_papels_path, class: "btn btn-primary" %>

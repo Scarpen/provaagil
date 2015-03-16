@@ -1,21 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @papel.nome %>
-</p>
+
+ <h1> <%= @papel.nome %> </h1>
 
 <p>
   <strong>Descricao:</strong>
   <%= @papel.descricao %>
 </p>
-
 <p>
+  <strong>Integrantes com esse papel:</strong>
+  <table class='table table-striped table-hover'>
+  		<tr>
+  			<th>Integrante</th>
+  			<th>Equipe</th>
 
+  		</tr>
+	  <% @papel.profissional.each do |integrante|%>
+	  <tr>
+	  	<td> <%= integrante.nome %> </td>
+	  		<td>
+	  		<% if integrante.equipe %>
+  			 <%= integrante.equipe.nome %> 
+  			<% end %>
+  			</td>
+	</tr>
+	  <% end %>
+  </table>
+  </p>
 
-
-</p>
-
-
-<%= link_to 'Editar', edit_papels_path(@papel) %> |
-<%= link_to 'Voltar', papels_path %>
+<%= button_to 'Editar', edit_papels_path(@papel) %> 
+<%= button_to 'Voltar', papels_path %>

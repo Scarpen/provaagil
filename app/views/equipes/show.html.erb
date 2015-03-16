@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @equipe.nome %>
-</p>
+ <h1> <%= @equipe.nome %> </h1>
 
 <p>
   <strong>Descricao:</strong>
@@ -14,7 +11,7 @@
   <table class='table table-striped table-hover'>
   		<tr>
   			<th>Integrante</th>
-  			<th>Papel<th>
+  			<th>Papel</th>
 
   		</tr>
 	  <% @equipe.profissional.each do |integrante|%>
@@ -34,4 +31,4 @@
 
 
 <%= link_to 'Editar', edit_equipes_path(@equipe) %> |
-<%= link_to 'Voltar', equipes_path %>
+<%= link_to 'Voltar', equipes_path%>

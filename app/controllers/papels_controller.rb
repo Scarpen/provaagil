@@ -24,11 +24,11 @@ class PapelsController < ApplicationController
   # POST /papels
   # POST /papels.json
   def create
-    @papel = Papel.new(papel_params)
+    @papel = Papel.new(params[:id])
 
     respond_to do |format|
       if @papel.save
-        format.html { redirect_to @papel, notice: 'Papel was successfully created.' }
+        format.html { redirect_to @papel, notice: 'Papel foi criado com sucesso' }
         format.json { render :show, status: :created, location: @papel }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PapelsController < ApplicationController
   def update
     respond_to do |format|
       if @papel.update(papel_params)
-        format.html { redirect_to @papel, notice: 'Papel was successfully updated.' }
+        format.html { redirect_to @papel, notice: 'Papel foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @papel }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PapelsController < ApplicationController
   def destroy
     @papel.destroy
     respond_to do |format|
-      format.html { redirect_to papels_url, notice: 'Papel was successfully destroyed.' }
+      format.html { redirect_to papels_url, notice: 'Papel foi excluido com sucesso.' }
       format.json { head :no_content }
     end
   end

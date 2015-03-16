@@ -24,11 +24,11 @@ class EquipesController < ApplicationController
   # POST /equipes
   # POST /equipes.json
   def create
-    @equipe = Equipe.new(equipe_params)
+    @equipe = Equipe.new(params[:id])
 
     respond_to do |format|
       if @equipe.save
-        format.html { redirect_to @equipe, notice: 'Equipe was successfully created.' }
+        format.html { redirect_to @equipe, notice: 'Equipe foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @equipe }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EquipesController < ApplicationController
   def update
     respond_to do |format|
       if @equipe.update(equipe_params)
-        format.html { redirect_to @equipe, notice: 'Equipe was successfully updated.' }
+        format.html { redirect_to @equipe, notice: 'Equipe foi atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @equipe }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EquipesController < ApplicationController
   def destroy
     @equipe.destroy
     respond_to do |format|
-      format.html { redirect_to equipes_url, notice: 'Equipe was successfully destroyed.' }
+      format.html { redirect_to equipes_url, notice: 'Equipe foi excluida com sucesso.' }
       format.json { head :no_content }
     end
   end

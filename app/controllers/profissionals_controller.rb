@@ -24,11 +24,11 @@ class ProfissionalsController < ApplicationController
   # POST /profissionals
   # POST /profissionals.json
   def create
-    @profissional = Profissional.new(profissional_params)
+    @profissional = Profissional.new(params[:id])
 
     respond_to do |format|
       if @profissional.save
-        format.html { redirect_to @profissional, notice: 'Profissional was successfully created.' }
+        format.html { redirect_to @profissional, notice: 'Integrante foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @profissional }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ProfissionalsController < ApplicationController
   def update
     respond_to do |format|
       if @profissional.update(profissional_params)
-        format.html { redirect_to @profissional, notice: 'Profissional was successfully updated.' }
+        format.html { redirect_to @profissional, notice: 'Integrante foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @profissional }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ProfissionalsController < ApplicationController
   def destroy
     @profissional.destroy
     respond_to do |format|
-      format.html { redirect_to profissionals_url, notice: 'Profissional was successfully destroyed.' }
+      format.html { redirect_to profissionals_url, notice: 'Integrante foi excluido com sucesso.' }
       format.json { head :no_content }
     end
   end

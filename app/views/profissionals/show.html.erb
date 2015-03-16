@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @profissional.nome %>
-</p>
+  <h1> <%= @profissional.nome %> </h1>
 
 <p>
   <strong>Email:</strong>
@@ -36,5 +33,5 @@
   <%= @profissional.equipe.nome %>
 </p>
 <% end %>
-<%= link_to 'Editar', edit_profissionals_path(@profissional) %> |
+<%= link_to 'Editar', edit_profissionals_path(@profissional) %> 
 <%= link_to 'Voltar', profissionals_path %>

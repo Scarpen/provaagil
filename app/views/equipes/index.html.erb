@@ -1,6 +1,6 @@
 <h1>Listando Equipes</h1>
 
-<table>
+<table class='table table-striped table-hover'>
   <thead>
     <tr>
       <th>Nome</th>
@@ -16,7 +16,7 @@
         <td><%= equipe.descricao %></td>
         <td><%= link_to 'Mostrar', equipe %></td>
         <td><%= link_to 'Editar', edit_equipes_path(equipe) %></td>
-        <td><%= link_to 'Apagar', equipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Apagar', equipe, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'Nova Equipe', new_equipes_path %>
+<%= button_to 'Nova Equipe', new_equipes_path, class: "btn btn-primary" %>

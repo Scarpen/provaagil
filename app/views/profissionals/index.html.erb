@@ -1,6 +1,6 @@
 <h1>Listando Integrantes</h1>
 
-<table>
+<table class='table table-striped table-hover'>
   <thead>
     <tr>
       <th>Nome</th>
@@ -22,11 +22,16 @@
         <td><%= profissional.cpf %></td>
         <td><%= profissional.endereco %></td>
         <td><%= profissional.telefone %></td>
-        <td><%= profissional.papel_id %></td>
-        <td><%= profissional.equipe_id %></td>
+
+        <td><%= if profissional.papel
+          profissional.papel.nome 
+                end %></td>
+        <td><%= if profissional.equipe
+          profissional.equipe.nome 
+                end %></td>
         <td><%= link_to 'Mostrar', profissional %></td>
-        <td><%= link_to 'Editar', edit_profissionals_path(profissional) %></td>
-        <td><%= link_to 'Apagar', profissional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_profissionals_path(profissional)%></td>
+        <td><%= link_to 'Apagar', profissional, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +39,4 @@
 
 <br>
 
-<%= link_to 'Novo Integrante', new_profissionals_path %>
+<%= button_to 'Novo Integrante', new_profissionals_path, class: "btn btn-primary" %>
