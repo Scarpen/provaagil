@@ -24,7 +24,7 @@ class EquipesController < ApplicationController
   # POST /equipes
   # POST /equipes.json
   def create
-    @equipe = Equipe.new(params[:id])
+    @equipe = Equipe.new(equipe_params)
 
     respond_to do |format|
       if @equipe.save

@@ -24,7 +24,7 @@ class PapelsController < ApplicationController
   # POST /papels
   # POST /papels.json
   def create
-    @papel = Papel.new(params[:id])
+    @papel = Papel.new(papel_params)
 
     respond_to do |format|
       if @papel.save

@@ -24,7 +24,7 @@ class ProfissionalsController < ApplicationController
   # POST /profissionals
   # POST /profissionals.json
   def create
-    @profissional = Profissional.new(params[:id])
+    @profissional = Profissional.new(profissional_params)
 
     respond_to do |format|
       if @profissional.save
